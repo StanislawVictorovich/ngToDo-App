@@ -1,21 +1,25 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { TODOS } from '../mock.todo';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { ToDo } from '../todo';
+import { ToDoEngine } from '../todo-engine';
 
 @Component({
-  selector: 'list',
+  selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: [ './list.component.css' ]
 })
+export class ListComponent extends ToDoEngine{
 
-export class List implements OnInit {
   @Input() text:string;
-  TODOS_LIST = TODOS;
-  constructor() { }
-    
-  ngOnInit() {
-    
+  @Input() todos: ToDo[];
+  @Input() currentPage: number;
+
+  @Output() onChecked = new EventEmitter<number>(); 
+
+  public deleteTask(item: ToDo) { 
+    this.todos.splice(this.todos.indexOf(item),1);console.log(this.todos);
   }
-  public deleteTask(i:number) { 
-    TODOS.splice(i,1);
+
+  private checkTask(item: ToDo){
+    this.onChecked.emit(this.todos.indexOf(item));
   }
 }

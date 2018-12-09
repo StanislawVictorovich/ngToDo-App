@@ -1,25 +1,25 @@
-#NewPage {
+#new-page {
   right: 0;
 }
 
-#ForwardPage {
+#forward-page {
   transform: rotate(90deg);
   right: 46px;
 }
 
-#BackPage {
+#backward-page {
   transform: rotate(270deg);
   right: 86px;
 }
 
-.NavigationButtons {
-  position: absolute;
+.navigation-buttons {
+  position: fixed;
   bottom: 0;
   padding: 12px;
   transition: 0.4s;  
 }
 
-.NavigationButtons:hover {
+.navigation-buttons:hover {
   cursor: pointer;
   background-color: rgb(90, 46, 172);
   color: white;

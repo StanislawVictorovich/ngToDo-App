@@ -1,3 +1,22 @@
-<span id="NewPage" class="NavigationButtons">➕</span>
-<span id="ForwardPage" class="NavigationButtons">🔺</span>
-<span id="BackPage" class="NavigationButtons">🔺</span>
+<span 
+  id="new-page" 
+  class="navigation-buttons"
+  (click)="NewPage()"
+  >➕
+</span>
+
+<span
+  *ngIf="currentPage < getLastPageOfToDos(todos)"
+  id="forward-page" 
+  class="navigation-buttons"
+  (click)="ForwardPage()"
+  >🔺
+</span>
+
+<span 
+  *ngIf="currentPage > 1"
+  id="backward-page" 
+  class="navigation-buttons"
+  (click)="BackPage()"
+  >🔺
+</span>

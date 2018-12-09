@@ -1,3 +1,6 @@
-<li *ngFor="let element of TODOS_LIST; let i = index"> {{element.todoText}}
-  <span class="Close" (click)="deleteTask(i)">❌</span>
+<li *ngFor="let item of getToDosByIndexPage(todos, currentPage); let i = index" 
+    (click)="checkTask(item)" 
+    [ngClass]="{ 'checked' : item.completed }"> 
+      {{item.title}}
+  <span class="close" (click)="deleteTask(item)">❌</span>
 </li>

@@ -25,13 +25,13 @@ li:hover {
   background: #ddd;
 }
   
-li.Checked {
+li.checked {
   background: lightgray;
   color: #fff;
   text-decoration: line-through;
 }
 
-li.Checked::before {
+li.checked::before {
   content: '';
   position: absolute;
   border-color: #fff;
@@ -44,7 +44,7 @@ li.Checked::before {
   width: 7px;
 }
 
-.Close {
+.close {
   position: absolute;
   right: 0;
   top: 0;
@@ -52,7 +52,7 @@ li.Checked::before {
   transition: 0.4s;
 }
 
-.Close:hover {
+.close:hover {
   background-color: rgb(90, 46, 172);
   color: white;
   transition: 0.4s;

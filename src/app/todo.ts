@@ -1,4 +1,6 @@
 export class ToDo {
-  todoText: string;
-  checked: boolean;
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
 }

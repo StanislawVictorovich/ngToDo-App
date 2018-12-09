@@ -1,27 +1,18 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 import { ToDo } from './todo';
+import { TODO_URL } from './constants'
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class ToDoService {
-  public TODOS:ToDo[] = [
-  { todoText: 'go away', checked: true },
-  { todoText: 'charge the smartphone', checked: false },
-  { todoText: 'play ps', checked: false },
-  { todoText: 'wash my dirty dog', checked: true},
-  { todoText: 'congratulate my mother', checked: false }
-  ]
 
-  public deleteTask(i:number) { 
-    this.TODOS.splice(i,1);
-  }
+  constructor(private http: HttpClient) {}
 
-  public add(text) {
-    this.TODOS.push({
-      todoText: text,
-      checked: false
-    });
+  public getToDos(): Observable<ToDo[]> {
+    return this.http.get<ToDo[]>(TODO_URL);
   }
 }
