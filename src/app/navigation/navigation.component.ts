@@ -12,9 +12,9 @@ export class NavigationComponent {
   @Input() todos: ToDo[];
   @Input() currentPage: number;
 
-  @Output() onNewPage = new EventEmitter<boolean>();
-  @Output() onFowardPage = new EventEmitter<boolean>();
-  @Output() onBackwardPage = new EventEmitter<boolean>();
+  @Output() onNewPage = new EventEmitter();
+  @Output() onFowardPage = new EventEmitter();
+  @Output() onBackwardPage = new EventEmitter();
 
   constructor(private toDoService: ToDoService) { }
 
@@ -23,12 +23,12 @@ export class NavigationComponent {
   }
 
   private NewPage(): void {
-    this.onNewPage.emit(true);
+    this.onNewPage.emit();
   }
   private ForwardPage(): void {
-    this.onFowardPage.emit(true);
+    this.onFowardPage.emit();
   }
   private BackPage(): void {
-    this.onBackwardPage.emit(true);
+    this.onBackwardPage.emit();
   }
 }
