@@ -27,19 +27,19 @@ export class AppComponent implements OnInit {
     this.todos[index].completed = !this.todos[index].completed;
   }
 
-  public onNewPage() {
+  public onNewPage(): void {
     this.currentPage = this.toDoService.getLastPageOfToDos(this.todos) + 1;
   }
 
-  public onFowardPage() {
+  public onFowardPage(): void {
     this.currentPage += 1;
   }
 
-  public onBackwardPage() {
+  public onBackwardPage(): void {
     this.currentPage -= 1;
   }
 
-  public addTask() {
+  public addTask(): void {
     const item: ToDo = {
       title: this.newToDoText,
       completed: false,

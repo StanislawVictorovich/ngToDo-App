@@ -17,11 +17,15 @@ export class ListComponent {
 
   constructor(private toDoService: ToDoService) { }
 
-  public deleteTask(item: ToDo) {
+  public deleteTask(item: ToDo): void {
     this.todos.splice(this.todos.indexOf(item), 1);
   }
 
-  private checkTask(item: ToDo) {
+  private checkTask(item: ToDo): void {
     this.onChecked.emit(this.todos.indexOf(item));
+  }
+
+  public get toDos(): ToDo[] {
+    return this.toDoService.getToDosByIndexPage(this.todos, this.currentPage);
   }
 }

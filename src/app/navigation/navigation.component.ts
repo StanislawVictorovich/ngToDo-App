@@ -20,13 +20,17 @@ export class NavigationComponent {
 
   constructor(private toDoService: ToDoService) { }
 
-  private NewPage() {
+  private get lastPage(): number {
+    return this.toDoService.getLastPageOfToDos(this.todos);
+  }
+
+  private NewPage(): void {
     this.onNewPage.emit(true);
   }
-  private ForwardPage() {
+  private ForwardPage(): void {
     this.onFowardPage.emit(true);
   }
-  private BackPage() {
+  private BackPage(): void {
     this.onBackwardPage.emit(true);
   }
 }

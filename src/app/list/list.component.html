@@ -1,4 +1,4 @@
-<li *ngFor="let item of toDoService.getToDosByIndexPage(todos, currentPage); let i = index" 
+<li *ngFor="let item of toDos; let i = index" 
     (click)="checkTask(item)" 
     [class.checked]="item.completed"> 
       {{item.title}}
