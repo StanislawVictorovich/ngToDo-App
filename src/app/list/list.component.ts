@@ -16,7 +16,7 @@ export class ListComponent extends ToDoEngine{
   @Output() onChecked = new EventEmitter<number>(); 
 
   public deleteTask(item: ToDo) { 
-    this.todos.splice(this.todos.indexOf(item),1);console.log(this.todos);
+    this.todos.splice(this.todos.indexOf(item),1);
   }
 
   private checkTask(item: ToDo){
