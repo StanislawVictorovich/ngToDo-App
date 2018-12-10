@@ -24,7 +24,7 @@ export class AppComponent extends ToDoEngine implements OnInit{
   }
 
   public onChecked(index: number){
-    this.todos[index].completed = !this.todos[index].completed;console.log(this.todos);
+    this.todos[index].completed = !this.todos[index].completed;
   }
   
   public onNewPage(){
@@ -45,11 +45,11 @@ export class AppComponent extends ToDoEngine implements OnInit{
     item.title = this.newToDoText;
     item.completed = false;
     item.id = this.getLastIndexElementOfCurrentPage(this.todos, this.currentPage) + 1;
-    item.userId = this.currentPage;alert(this.getLastIndexElementOfCurrentPage(this.todos, this.currentPage) + 1);
-    newPosition = this.getLastIndexElementOfCurrentPage(this.todos, this.currentPage) + 1;
+    item.userId = this.currentPage;
+    newPosition = this.getLastIndexElementOfCurrentPage(this.todos, this.currentPage);
     if (!newPosition) {
-      newPosition = this.getLastIndexElementOfCurrentPage(this.todos, this.currentPage - 1) + 1;
+      newPosition = this.getLastIndexElementOfCurrentPage(this.todos, this.currentPage - 1);
     }
-    this.todos.splice(newPosition, 0, item);
+    this.todos.splice(newPosition + 1, 0, item);
   }
 }
