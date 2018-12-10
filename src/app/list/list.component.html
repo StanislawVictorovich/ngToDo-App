@@ -1,6 +1,6 @@
-<li *ngFor="let item of getToDosByIndexPage(todos, currentPage); let i = index" 
+<li *ngFor="let item of toDoService.getToDosByIndexPage(todos, currentPage); let i = index" 
     (click)="checkTask(item)" 
-    [ngClass]="{ 'checked' : item.completed }"> 
+    [class.checked]="item.completed"> 
       {{item.title}}
   <span class="close" (click)="deleteTask(item)">❌</span>
 </li>

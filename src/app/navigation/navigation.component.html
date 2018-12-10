@@ -6,7 +6,7 @@
 </span>
 
 <span
-  *ngIf="currentPage < getLastPageOfToDos(todos)"
+  *ngIf="currentPage < toDoService.getLastPageOfToDos(todos)"
   id="forward-page" 
   class="navigation-buttons"
   (click)="ForwardPage()"

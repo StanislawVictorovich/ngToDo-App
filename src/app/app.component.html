@@ -1,6 +1,6 @@
-<div id="operation-block" class="header"> 
-  <h4 style="margin:5px" id="Date">Page {{ currentPage }}</h4> 
-  <input type="text" id="input" placeholder="Type, please..." [(ngModel)]="newToDoText">
+<div id="operation-block" class="header">
+	<h4 style="margin:5px" id="Date">Page {{ currentPage }}</h4>
+	<input type="text" id="input" placeholder="Type, please..." [(ngModel)]="newToDoText">
   <span id="add-button" (click)="addTask()">Add</span> 
 </div> 
 <ul class="work-block" id="current-page"> 
@@ -16,4 +16,4 @@
   (onBackwardPage)="onBackwardPage($event)"
   [todos]="todos"
   [currentPage]="currentPage">
-</app-navigation> 
+</app-navigation>
