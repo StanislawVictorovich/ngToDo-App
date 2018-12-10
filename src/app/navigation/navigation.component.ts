@@ -16,8 +16,6 @@ export class NavigationComponent {
   @Output() onFowardPage = new EventEmitter<boolean>();
   @Output() onBackwardPage = new EventEmitter<boolean>();
 
-  private data: ToDo[];
-
   constructor(private toDoService: ToDoService) { }
 
   private get lastPage(): number {

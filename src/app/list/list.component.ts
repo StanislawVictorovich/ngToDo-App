@@ -17,7 +17,7 @@ export class ListComponent {
 
   constructor(private toDoService: ToDoService) { }
 
-  public deleteTask(item: ToDo): void {
+  private deleteTask(item: ToDo): void {
     this.todos.splice(this.todos.indexOf(item), 1);
   }
 
@@ -25,7 +25,7 @@ export class ListComponent {
     this.onChecked.emit(this.todos.indexOf(item));
   }
 
-  public get toDos(): ToDo[] {
+  private get toDos(): ToDo[] {
     return this.toDoService.getToDosByIndexPage(this.todos, this.currentPage);
   }
 }

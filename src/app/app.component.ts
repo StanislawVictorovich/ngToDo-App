@@ -9,9 +9,9 @@ import { ToDo } from './todo';
 })
 export class AppComponent implements OnInit {
 
-  public newToDoText: string;
-  public currentPage: number;
-  public todos: ToDo[];
+  private newToDoText: string;
+  private currentPage: number;
+  private todos: ToDo[];
 
   constructor(private toDoService: ToDoService) {
     this.currentPage = 1;
@@ -23,23 +23,23 @@ export class AppComponent implements OnInit {
     });
   }
 
-  public onChecked(index: number) {
+  private onChecked(index: number) {
     this.todos[index].completed = !this.todos[index].completed;
   }
 
-  public onNewPage(): void {
+  private onNewPage(): void {
     this.currentPage = this.toDoService.getLastPageOfToDos(this.todos) + 1;
   }
 
-  public onFowardPage(): void {
+  private onFowardPage(): void {
     this.currentPage += 1;
   }
 
-  public onBackwardPage(): void {
+  private onBackwardPage(): void {
     this.currentPage -= 1;
   }
 
-  public addTask(): void {
+  private addTask(): void {
     const item: ToDo = {
       title: this.newToDoText,
       completed: false,
