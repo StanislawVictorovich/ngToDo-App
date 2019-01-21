@@ -1,4 +1,4 @@
-<div align="center">
+<div align="center"> 
   <a href="https://github.com/StanislawVictorovich/ngToDo-App">
     <img width="150" height="150" src="https://sdtimes.com/wp-content/uploads/2014/09/todo-manager-icon.png">
   </a>
